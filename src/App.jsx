@@ -45,21 +45,23 @@ const App = ()=>{
 
   return(
     <div className="h-screen bg-gray-200 overflow-hidden">
-      <nav className='text-white bg-gradient-to-r from-rose-500 via-slate-800 to-slate-900 h-[60px] fixed left-0 top-0 w-full flex justify-between items-center px-8'>
+      <nav className='text-white bg-gradient-to-r from-slate-900 via-rose-800 to-slate-900 h-[60px] fixed left-0 top-0 w-full flex justify-between items-center lg:px-8 px-2'>
         <div className='flex items-center'>
           <button 
-          className='w-10 h-10 bg-[radial-gradient(circle_at_center,_hsl(44.5,_78.56052532924392%,_58.28726600401578%)_0%,_hsl(182.0,_84.91011818677582%,_57.29348846116649%)_50%,_hsl(319.5,_73.4713192905786%,_40.82189409222452%)_100%)] rounded-full text-white font-bold'>
+          className='lg:w-10 w-7 lg:h-10 h-7 bg-[radial-gradient(circle_at_center,_hsl(44.5,_78.56052532924392%,_58.28726600401578%)_0%,_hsl(182.0,_84.91011818677582%,_57.29348846116649%)_50%,_hsl(319.5,_73.4713192905786%,_40.82189409222452%)_100%)] rounded-full text-white lg:font-bold font-medium'>
             PL
           </button>
-            <h1 className='text-2xl font-bold ml-px'>anner</h1>
+            <h1 className='lg:text-2xl text-1xl font-bold ml-0.5'>anner</h1>
         </div>
 
-        <div className='flex gap-5 items-center'>
+        <div className='flex lg:gap-5 gap-2 items-center'>
           <h1 className='font-bold text-2xl lg:block hidden'>{timer}</h1>
-          <DatePicker className='!py-1.5'/>
+          <div className='hidden lg:block'>
+            <DatePicker className='!py-1.5'/>
+          </div>
            <button 
               onClick={()=>setOpen(true)}
-              className='focus:shadow-lg hover:scale-105 transition-translate duration-300 items-center text-sm py-2 px-3 rounded bg-gradient-to-tr from-blue-600 via-blue-500 to-blue-600 text-white font-medium flex gap-1'
+              className='focus:shadow-lg hover:scale-105 transition-translate duration-300 items-center text-sm lg:py-2 py-1 lg:px-3 px-2 rounded bg-gradient-to-tr from-blue-600 via-blue-500 to-blue-600 text-white font-medium flex gap-1'
             >
               <Plus className='w-4 h-4'/>
               Add task
@@ -67,7 +69,7 @@ const App = ()=>{
 
             <Popconfirm onConfirm={()=>deleteAllTasks()} title='Do you want to delete all tasks?'>
               <button
-              className='focus:shadow-lg hover:scale-105 transition-translate duration-300 items-center text-sm py-2 px-3 rounded bg-gradient-to-tr from-red-600 via-rose-500 to-red-600 text-white font-medium flex gap-1'
+              className='focus:shadow-lg hover:scale-105 transition-translate duration-300 items-center text-sm lg:py-2 py-1 lg:px-3 px-2 rounded bg-gradient-to-tr from-red-600 via-rose-500 to-red-600 text-white font-medium flex gap-1'
             >
               <Delete className='w-4 h-4'/>
               Delete all tasks
@@ -269,10 +271,10 @@ const App = ()=>{
         </div>
       </section>
 
-      <footer className='text-white bg-gradient-to-l from-rose-500 via-slate-800 to-slate-900 h-[60px] fixed left-0 bottom-0 w-full flex px-8 items-center justify-between'>
-          <h1 className='font-bold text-2xl'>Total tasks - {tasks.length}</h1>
+      <footer className='text-white bg-gradient-to-r from-rose-700 via-slate-800 to-slate-900 h-[60px] fixed left-0 bottom-0 w-full flex lg:px-8 px-2 items-center justify-between'>
+          <h1 className='lg:font-bold font-medium text-lg:2xl text-1xl'>Total tasks - {tasks.length}</h1>
           <a href="https://www.ms2dwrld.com"
-            className='hover:underline'
+            className='hover:underline text-sm lg:text-1xl'
           >www.ms2dwrld.com</a>
       </footer>
       <Modal open={open} footer={null} onCancel={handleClose} maskClosable={false}>

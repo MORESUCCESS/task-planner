@@ -34,4 +34,5 @@ Clone the repo:
 git clone https://github.com/MORESUCCESS/task-planner.git
 cd task-planner
 npm install
+npm run dev
 ```
