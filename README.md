@@ -21,3 +21,7 @@ Clone the repo:
 ```bash
 git clone https://github.com/MORESUCCESS/task-planner.git
 cd task-planner
+npm install
+npm start
+npm run build
+
